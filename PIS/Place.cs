@@ -8,7 +8,14 @@ namespace PIS
 {
     public abstract class Place
     {
-        public Place() { }
+        
+        public Place((double, int, DateTime) ItemsOfConverter) 
+        {
+            Height = ItemsOfConverter.Item1;
+            PressureValue = ItemsOfConverter.Item2;
+            Date = ItemsOfConverter.Item3;
+
+        }
 
         public double Height { get; set; } = -10000;
         public int PressureValue { get; set; } = -1;
@@ -17,31 +24,14 @@ namespace PIS
         {
             if (PressureValue == -1 | Height == -10000 | Date.Year == 1)
             {
-                return ("\nДанные неккоректно!!!\n");
+                return ("\nДанные неккоректны!!!\n");
             }
             else
             {
                 return ($"\nВысота:{Height} м \nДавление : {PressureValue} \nДата: {Date.ToString("d")}\n");
             }
         }
-        public void DataProcessing(string line)
-        {
-            string[] strings;
-            if (line.Contains(";"))
-            {
-                strings = line.Split(';');
-            }
-            else
-            {
-                strings = line.Split(' ');
-            }
-            foreach (string s in strings)
-            {
-                if (int.TryParse(s, out int pressureValue)) { PressureValue = pressureValue; }
-                else if (s.Contains(",") & double.TryParse(s, out double height)) { Height = height; }
-                else if (DateTime.TryParse(s, out DateTime date) & s.Split('.').Length == 3) { Date = date; }
-            }
-        }
+        
         
     
 }
