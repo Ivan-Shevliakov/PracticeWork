@@ -1,0 +1,7 @@
+C:\Users\vanya\source\repos\PIS\PIS\bin\Debug\PIS.exe.config
+C:\Users\vanya\source\repos\PIS\PIS\bin\Debug\PIS.exe
+C:\Users\vanya\source\repos\PIS\PIS\bin\Debug\PIS.pdb
+C:\Users\vanya\source\repos\PIS\PIS\obj\Debug\PIS.csproj.AssemblyReference.cache
+C:\Users\vanya\source\repos\PIS\PIS\obj\Debug\PIS.csproj.CoreCompileInputs.cache
+C:\Users\vanya\source\repos\PIS\PIS\obj\Debug\PIS.exe
+C:\Users\vanya\source\repos\PIS\PIS\obj\Debug\PIS.pdb
