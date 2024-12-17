@@ -12,21 +12,21 @@ namespace PIS
         static void Main(string[] args)
         {
 
-            Place Place1 = new Place();
+            Place Place1 = new PlaceWithPressureInPa();
             Place1.DataProcessing("22; 04,02; 1032.2.2");
-            Console.WriteLine(Place1.ShowPlaceValues());
+            Console.WriteLine(Place1);
 
-            Place Place2 = new Place();
+            Place Place2 = new PlaceWithPressureInPa();
             Place2.DataProcessing("04,02; 52; 09.09.24");
-            Console.WriteLine(Place2.ShowPlaceValues());
+            Console.WriteLine(Place2);
 
-            Place Place3 = new Place();
+            Place Place3 = new PlaceWithPressureInPa();
             Place3.DataProcessing("1000; 02.02.2002; 1001,1");
-            Console.WriteLine(Place3.ShowPlaceValues());
+            Console.WriteLine(Place3);
 
-            Place Place4 = new Place();
+            Place Place4 = new PlaceWithPressureInPa();
             Place4.DataProcessing("04,02; sada; 09.09.24");
-            Console.WriteLine(Place4.ShowPlaceValues());
+            Console.WriteLine(Place4);
         }
     }
 }

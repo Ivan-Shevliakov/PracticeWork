@@ -6,22 +6,22 @@ using System.Threading.Tasks;
 
 namespace PIS
 {
-    public class Place
+    public abstract class Place
     {
         public Place() { }
 
         public double Height { get; set; } = -10000;
         public int PressureValue { get; set; } = -1;
         public DateTime Date { get; set; }
-        public string ShowPlaceValues()
+        public string GetPlaceValues()
         {
             if (PressureValue == -1 | Height == -10000 | Date.Year == 1)
             {
-                return ("\nДанные введены неккоректно!!!\n");
+                return ("\nДанные неккоректно!!!\n");
             }
             else
             {
-                return ($"\nВысота:{Height} м \nДавление : {PressureValue} мм.рт.с. \nДата: {Date.ToString("d")}\n");
+                return ($"\nВысота:{Height} м \nДавление : {PressureValue} \nДата: {Date.ToString("d")}\n");
             }
         }
         public void DataProcessing(string line)
@@ -42,13 +42,7 @@ namespace PIS
                 else if (DateTime.TryParse(s, out DateTime date) & s.Split('.').Length == 3) { Date = date; }
             }
         }
-        public string buitiful(string s)
-        {
-            string buitifulBorder = new string('-', 40);
-
-
-            return buitifulBorder + "\n" + s + "\n" + buitifulBorder;
-        }
+        
     
 }
 }
