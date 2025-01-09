@@ -6,7 +6,7 @@ namespace MyTestsOfMethods
     public class MyTests
     {
         [Fact]
-        public void DataProcessingTest1()
+        public void DataProcessingTestWithCorrectDataSeparatedByCommaOrBySpace()
         {
             // Первый тест направлен на проверку обработки корреткных данных, записанных через пробел и точки с запятой  
             // вводными данными теста будет строка "22; 04,02; 1032.2.2", ожидание, что выводом будет набор данных  (double , int, DateTime) равный (4.02, 22, 02.02.1032) 
@@ -21,7 +21,7 @@ namespace MyTestsOfMethods
             Assert.Equal(expected, actual);
         }
         [Fact]
-        public void DataProcessingTest2()
+        public void DataProcessingTestWithCorrectDataButInADifferentOrder()
         {
             // Второй тест направлен на проверку обработки корреткных данных, но в различном порядке во входной строке
             // вводными данными теста будет строка "22 04,02 1032.2.2", ожидание, что выводом будет набор данных  (double , int, DateTime) равный (4.02, 22, 02.02.1032) 
@@ -37,7 +37,7 @@ namespace MyTestsOfMethods
 
         }
         [Fact]
-        public void DataProcessingTest3()
+        public void DataProcessingTestWithAnEmptyLine()
         {
             // Третий тест направлен на проверку обработки пустой строки, но в различном порядке во входной строке
             // вводными данными теста будет пустая строка "" ожидание что выводом будет набор данных  (double , int, DateTime) равный (double.MinValue, int.MinValue, DateTime.MinValue) 
@@ -50,7 +50,7 @@ namespace MyTestsOfMethods
 
         }
         [Fact]
-        public void DataProcessingTest4()
+        public void DataProcessingTestWithVariousIncorrectData()
         {
             // Четвертый тест направлен на проверку обработки некорреткных данных, в различных вариациях
             // вводными данными теста будет пустая строка "11 11,1 с", ожидание что выводом будет набор данных,  (double , int, DateTime) равный (11.1, 11, DateTime.MinValue) 
