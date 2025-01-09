@@ -14,15 +14,14 @@ namespace PIS
             Height = ItemsOfConverter.Item1;
             PressureValue = ItemsOfConverter.Item2;
             Date = ItemsOfConverter.Item3;
-
         }
 
-        public double Height { get; set; } = -10000;
-        public int PressureValue { get; set; } = -1;
-        public DateTime Date { get; set; }
+        public double Height { get; set; } 
+        public int PressureValue { get; set; } 
+        public DateTime Date { get; set; } 
         public string GetPlaceValues()
         {
-            if (PressureValue == -1 | Height == -10000 | Date.Year == 1)
+            if (PressureValue == int.MinValue | Height == Double.MinValue | Date == DateTime.MinValue)
             {
                 return ("\nДанные неккоректны!!!\n");
             }

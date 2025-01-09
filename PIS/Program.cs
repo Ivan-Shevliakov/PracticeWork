@@ -17,15 +17,12 @@ namespace PIS
             Console.WriteLine(Place1);
 
             Place Place2 = new PlaceWithPressureInPa(converter.DataProcessing("04,02; 52; 09.09.24"));
-            
             Console.WriteLine(Place2);
 
             Place Place3 = new PlaceWithPressureInAtm(converter.DataProcessing("1000; 02.02.2002; 1001,1"));
-            
             Console.WriteLine(Place3);
 
             Place Place4 = new PlaceWithPressureInAtm(converter.DataProcessing("04,02; sada; 09.09.24"));
-            
             Console.WriteLine(Place4);
         }
     }

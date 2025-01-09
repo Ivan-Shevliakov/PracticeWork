@@ -5,6 +5,8 @@ VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PIS", "PIS\PIS.csproj", "{F375FFA5-FA5D-45BD-9BF5-2622756783B5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyTestsOfMethods", "MyTestsOfMethods\MyTestsOfMethods.csproj", "{A5874864-9B9E-45D3-8A67-B6D1B20A157D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{F375FFA5-FA5D-45BD-9BF5-2622756783B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F375FFA5-FA5D-45BD-9BF5-2622756783B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F375FFA5-FA5D-45BD-9BF5-2622756783B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5874864-9B9E-45D3-8A67-B6D1B20A157D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5874864-9B9E-45D3-8A67-B6D1B20A157D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5874864-9B9E-45D3-8A67-B6D1B20A157D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5874864-9B9E-45D3-8A67-B6D1B20A157D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
