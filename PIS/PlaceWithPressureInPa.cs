@@ -8,11 +8,10 @@ namespace PIS
 {
     public class PlaceWithPressureInPa: Place
     {
-        public PlaceWithPressureInPa((double, int, DateTime) ItemsOfConvertere) : base(ItemsOfConvertere) { }
-        public string typeOfValuePressure = "Па";
+        public string TypeOfValuePressure = "Па";
         public override string ToString()
         {
-            return $"Место с давлением в {typeOfValuePressure} \n" + GetPlaceValues();
+            return $"Место с давлением в {TypeOfValuePressure} \n" + GetPlaceValues();
         }
     }
 }

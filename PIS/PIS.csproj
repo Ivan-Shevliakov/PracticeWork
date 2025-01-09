@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Converter.cs" />
     <Compile Include="Place.cs" />
+    <Compile Include="PlaceFactory.cs" />
     <Compile Include="PlaceWithPressureInAtm.cs" />
     <Compile Include="PlaceWithPressureInPa.cs" />
     <Compile Include="Program.cs" />

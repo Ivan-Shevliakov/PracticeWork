@@ -22,6 +22,7 @@ namespace PIS
             {
                 strings = line.Split(' ');
             }
+            if (strings.Length != 3) { return (Height, PressureValue, Date); }
             foreach (string s in strings)
             {
                 if (int.TryParse(s, out int pressureValue) ) { PressureValue = pressureValue; }

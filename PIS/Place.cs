@@ -8,14 +8,7 @@ namespace PIS
 {
     public abstract class Place
     {
-        
-        public Place((double, int, DateTime) ItemsOfConverter) 
-        {
-            Height = ItemsOfConverter.Item1;
-            PressureValue = ItemsOfConverter.Item2;
-            Date = ItemsOfConverter.Item3;
-        }
-
+    
         public double Height { get; set; } 
         public int PressureValue { get; set; } 
         public DateTime Date { get; set; } 

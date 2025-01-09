@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -11,19 +12,29 @@ namespace PIS
     {
         static void Main(string[] args)
         {
+            string[] linesOfDataFile = File.ReadAllLines("Входные Данные.txt");
             Converter converter = new Converter();
-           
-            Place Place1 = new PlaceWithPressureInPa(converter.DataProcessing("22; 04,02; 1032.2.2"));
-            Console.WriteLine(Place1);
+            PlaceFactory factory = new PlaceFactory();
+            Place place ;
+            foreach (var line in linesOfDataFile) 
+            {
+                if (line.Contains("-Atm"))
+                    {
+                    place = factory.CreatePlace(converter.DataProcessing(line.Replace("-Atm", "")), "Atm"); 
+                    Console.WriteLine(place);
+                    }
+                else if (line.Contains("-Pa"))
+                {
+                    place = factory.CreatePlace(converter.DataProcessing(line.Replace("-Pa", "")), "Pa");
+                    Console.WriteLine(place);
+                }
+                else 
+                {
+                    Console.WriteLine("В строке не указан тип значения давления \n");
+                }
+            }
+            
 
-            Place Place2 = new PlaceWithPressureInPa(converter.DataProcessing("04,02; 52; 09.09.24"));
-            Console.WriteLine(Place2);
-
-            Place Place3 = new PlaceWithPressureInAtm(converter.DataProcessing("1000; 02.02.2002; 1001,1"));
-            Console.WriteLine(Place3);
-
-            Place Place4 = new PlaceWithPressureInAtm(converter.DataProcessing("04,02; sada; 09.09.24"));
-            Console.WriteLine(Place4);
         }
     }
 }
