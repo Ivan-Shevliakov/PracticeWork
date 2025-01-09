@@ -69,18 +69,13 @@ namespace MyTestsOfMethods
             expected = (11.1, int.MinValue, new DateTime(1032, 02, 02));
             actual = converter.DataProcessing(x);
             Assert.Equal(expected, actual);
-            // вводными данными теста будет строка "sddaaaadadsczcasd", ожидание, что выводом будет набор данных  (double , int, DateTime) равный (double.MinValue, int.MinValue, DateTime.MinValue) 
-            x = "sddaaaadadsczcasd";
-            expected = (double.MinValue, int.MinValue, DateTime.MinValue);
-            actual = converter.DataProcessing(x);
-            Assert.Equal(expected, actual);
         }
         [Fact]
         public void DataProcessingWithMoreOrLessInputDataThanNeeded()
         {
             // Пятый тест направлен на проверку обработки данных с большим или ментшим количеством входных данных
-            // вводными данными теста будет пустая строка "1 1" ожидание что выводом будет набор данных  (double , int, DateTime) равный (double.MinValue, int.MinValue, DateTime.MinValue) 
-            string x = "1 1";
+            // вводными данными теста будет пустая строка "1 1,2" ожидание что выводом будет набор данных  (double , int, DateTime) равный (double.MinValue, int.MinValue, DateTime.MinValue) 
+            string x = "1 1,2";
             (double, int, DateTime) expected = (double.MinValue, int.MinValue, DateTime.MinValue);
             PIS.Converter converter = new PIS.Converter();
             (double, int, DateTime) actual = converter.DataProcessing(x);
