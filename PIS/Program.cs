@@ -13,26 +13,37 @@ namespace PIS
         static void Main(string[] args)
         {
             string[] linesOfDataFile = File.ReadAllLines("Входные Данные.txt");
-            Converter converter = new Converter();
+            ConverterToPlaceValues converter = new ConverterToPlaceValues();
             PlaceFactory factory = new PlaceFactory();
             Place place ;
+            
             foreach (var line in linesOfDataFile) 
             {
-                if (line.Contains("-Atm"))
+                try
+                {
+                    if (line.Contains("Atm"))
                     {
-                    place = factory.CreatePlace(converter.DataProcessing(line.Replace("-Atm", "")), "Atm"); 
-                    Console.WriteLine(place);
+                        place = factory.CreatePlace(converter.ParseInDataSet(line.Replace("Atm", "")), "Atm");
+                        Console.WriteLine(place);
                     }
-                else if (line.Contains("-Pa"))
-                {
-                    place = factory.CreatePlace(converter.DataProcessing(line.Replace("-Pa", "")), "Pa");
-                    Console.WriteLine(place);
+                    else if (line.Contains("Pa"))
+                    {
+                        place = factory.CreatePlace(converter.ParseInDataSet(line.Replace("Pa", "")), "Pa");
+                        Console.WriteLine(place);
+                    }
+                    else { throw new IncorrectDataException("Некорректные данные: в строке нет единицы измерения давления"); }
                 }
-                else 
+                catch(Exception e) 
                 {
-                    Console.WriteLine("В строке не указан тип значения давления \n");
-                }
+                    Console.WriteLine("Строка: "+ (Array.IndexOf(linesOfDataFile,line)+1));
+                    Console.WriteLine(e.Message + "\n");
+
+                } 
+                
+                
+                
             }
+            
             
 
         }

@@ -43,7 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Converter.cs" />
+    <Compile Include="ConverterToPlaceValues.cs" />
+    <Compile Include="IncorrectDataException.cs" />
     <Compile Include="Place.cs" />
     <Compile Include="PlaceFactory.cs" />
     <Compile Include="PlaceWithPressureInAtm.cs" />

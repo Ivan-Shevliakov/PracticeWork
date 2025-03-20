@@ -8,23 +8,12 @@ namespace PIS
 {
     public abstract class Place
     {
-    
         public double Height { get; set; } 
         public int PressureValue { get; set; } 
         public DateTime Date { get; set; } 
         public string GetPlaceValues()
         {
-            if (PressureValue == int.MinValue | Height == Double.MinValue | Date == DateTime.MinValue)
-            {
-                return ("\nДанные неккоректны!!!\n");
-            }
-            else
-            {
-                return ($"\nВысота:{Height} м \nДавление : {PressureValue} \nДата: {Date.ToString("d")}\n");
-            }
-        }
-        
-        
-    
+                return ($"Высота:{Height} м \nДавление : {PressureValue} \nДата: {Date.ToString("d")}\n");           
+        }   
 }
 }
