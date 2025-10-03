@@ -7,29 +7,41 @@ namespace MyTestsOfMethods
     public class MyTests
     {
         [Fact]
-        public void DataProcessingTestWithCorrectDataSeparatedByCommaOrBySpace()
+        public void DataProcessingTestWithCorrectDataSeparated()
         {
             string x = "22; 04,02; 1032.2.2";
             (double, int, DateTime) expected = (4.02, 22, new DateTime(1032, 02, 02));
             PIS.ConverterToPlaceValues converter = new PIS.ConverterToPlaceValues();
             (double, int, DateTime) actual = converter.ParseInDataSet(x);
             Assert.Equal(expected, actual);
-            x = "22 04,02 1032.2.2";
-            actual = converter.ParseInDataSet(x);
-            Assert.Equal(expected, actual);
         }
         [Fact]
-        public void DataProcessingTestWithCorrectDataButInADifferentOrder()
+        public void DataProcessingTestWithCorrectDataSeparatedBySpace()
         {
             string x = "22 04,02 1032.2.2";
             (double, int, DateTime) expected = (4.02, 22, new DateTime(1032, 02, 02));
             PIS.ConverterToPlaceValues converter = new PIS.ConverterToPlaceValues();
             (double, int, DateTime) actual = converter.ParseInDataSet(x);
             Assert.Equal(expected, actual);
-            x = "04,02 22 1032.2.2";
-            actual = converter.ParseInDataSet(x);
+        }
+        [Fact]
+        public void DataProcessingTestWithCorrectDataInSubsequenceIntFloatDate()
+        {
+            string x = "22 04,02 1032.2.2";
+            (double, int, DateTime) expected = (4.02, 22, new DateTime(1032, 02, 02));
+            PIS.ConverterToPlaceValues converter = new PIS.ConverterToPlaceValues();
+            (double, int, DateTime) actual = converter.ParseInDataSet(x);
             Assert.Equal(expected, actual);
 
+        }
+        [Fact]
+        public void DataProcessingTestWithCorrectDataInSubsequenceFloatIntDate()
+        {
+            string x = "04,02 22 1032.2.2";
+            (double, int, DateTime) expected = (4.02, 22, new DateTime(1032, 02, 02));
+            PIS.ConverterToPlaceValues converter = new PIS.ConverterToPlaceValues();
+            (double, int, DateTime) actual = converter.ParseInDataSet(x);
+            Assert.Equal(expected, actual);
         }
         [Fact]
         public void DataProcessingTestWithAnEmptyLine()
