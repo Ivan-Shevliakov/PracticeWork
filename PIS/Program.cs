@@ -21,14 +21,17 @@ namespace PIS
             {
                 try
                 {
+ 
                     if (line.Contains("Atm"))
                     {
-                        place = factory.CreatePlace(converter.ParseInDataSet(line.Replace("Atm", "")), "Atm");
+                        place = new PlaceWithPressureInAtm();
+                        place.SetPlaceValues(line.Replace("Atm", ""));
                         Console.WriteLine(place);
                     }
                     else if (line.Contains("Pa"))
                     {
-                        place = factory.CreatePlace(converter.ParseInDataSet(line.Replace("Pa", "")), "Pa");
+                        place = new PlaceWithPressureInAtm();
+                        place.SetPlaceValues(line.Replace("Pa", ""));
                         Console.WriteLine(place);
                     }
                     else { throw new IncorrectDataException("Некорректные данные: в строке нет единицы измерения давления"); }

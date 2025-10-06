@@ -8,6 +8,7 @@ namespace PIS
 {
     public class ConverterToPlaceValues
     {
+
         public (double, int, DateTime) ParseInDataSet(string line)
         {
             double DoubleValue = new double();

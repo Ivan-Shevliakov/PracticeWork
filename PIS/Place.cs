@@ -14,6 +14,14 @@ namespace PIS
         public string GetPlaceValues()
         {
                 return ($"Высота:{Height} м \nДавление : {PressureValue} \nДата: {Date.ToString("d")}\n");           
-        }   
-}
+        }
+        public void SetPlaceValues(string placeString)
+        {
+            ConverterToPlaceValues converter = new ConverterToPlaceValues();
+            (double, int, DateTime) values = converter.ParseInDataSet(placeString);
+            PressureValue = values.Item2;
+            Height = values.Item1;
+            Date = values.Item3;
+        }
+    }
 }
